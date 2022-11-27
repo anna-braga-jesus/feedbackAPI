@@ -11,6 +11,7 @@ import { userSchema } from "../schemas/auth-schema.js";
 
 async function signUpValidation(req, res, next) {
   const { nome, email, comentario } = req.body;
+  console.log(req.body);
   const isValid = userSchema.validate(req.body, { abortEarly: false });
   if (isValid.error) {
     const error = isValid.error.details.map((erro) => erro.message);

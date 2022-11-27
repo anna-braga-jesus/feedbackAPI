@@ -1,8 +1,6 @@
 import { listUsers, listUsersById } from "../repositories/user-repository.js";
 import {
-  badRequestResponse,
   serverErrorResponse,
-  validationSchema,
   STATUS_CODE,
 } from "../controllers.js/helper-controller.js";
 import {
@@ -39,14 +37,5 @@ async function getAllComments(req, res) {
     return res.status(500).send("Deu ruim");
   }
 }
-async function updateAComment(req, res) {
-  const id = req.params.id;
-  try {
-    const userInfo = [id];
 
-    return res.status(STATUS_CODE.OK).send(userInfo.rows[0]);
-  } catch (error) {
-    return serverErrorResponse(res, error);
-  }
-}
-export { getUserPosts, createAUser, updateAComment, getAllComments };
+export { getUserPosts, createAUser, getAllComments };

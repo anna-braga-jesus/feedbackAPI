@@ -1,19 +1,16 @@
-#Esse arquivo é a pipeline de criação de imagens, mas tenho que criar no dockerhub primeiro
-# FROM httpd: latest
-#FROM node:latest (depois de fazer o docker pull node:latest e criar a pasta para trabalhar)
+FROM ubuntu:latest
 
-# WORKDIR /usr/local/apache2/htdocs/
-# COPY index.php /var/www/html/
-# COPY conexao.php /var/www/html
-
-# RUN apt-get update && apt-get install -y \  (vai gerar um arquivo executavel - transforma um script em arquivo binario)
-       # libfreetype6-dev \
-       # libjpeg62-turbo-dev \
-       # libpng-dev \
-    # && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    # && docker-php-ext-install -j$(nproc) gd \  
-    # && docker-php-ext-install pdo_mysql \
-    # && docker-php-ext-install mysqli \
+RUN apt-get update && apt-get install -y
+RUN apt-get -y install net-tools
+RUN apt-get -y install iputils-ping
+RUN apt-get -y install apache2
 
 
-# EXPOSE 80 porta padrão do apache
+WORKDIR /TCC-DIO/oto/backend
+COPY data.js /tmp/backend/database/data.js
+COPY data.js / 
+COPY sql.sql /
+
+CMD bash
+
+EXPOSE 80 

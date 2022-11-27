@@ -33,7 +33,6 @@ export default function HomeScreen() {
           <p>Veja o que nossos clientes estão comentando...</p>
         </Css.Box>
         <div>
-          {console.log(comment)}
           {!comment
             ? ""
             : comment.map((item) => {

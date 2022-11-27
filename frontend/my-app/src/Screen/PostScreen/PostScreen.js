@@ -7,29 +7,25 @@ import Css from "./style";
 
 export default function PostScreen() {
   const [post, setPost] = useState();
-  const [form, setForm] = useState({
-    nome: "",
-    email: "",
-    comentario: "",
-  });
+  const [nome, setNome] = useState();
+  const [email, setEmail] = useState();
+  const [comentario, setComentario] = useState();
+
   const navigate = useNavigate();
+
   function postAComment(e) {
     e.preventDefault();
-    // navigate("/comments");
-  }
-  useEffect(() => {
     axios
-      .get("http://localhost:4001/post")
+      .post("http://localhost:4001/comment", { nome, email, comentario })
       .then((res) => {
         setPost(res.data);
       })
       .catch((res) => {
-        //alert("Nome ou email inválidos!");
         setPost();
       });
-  }, []);
+  }
   function verifyEmptyFields() {
-    if (form.nome === "" || form.email === "" || form.comentario === "") {
+    if (!nome || !email || !comentario) {
       return alert("Preencha todos os campos!");
     } else {
       return alert("Comentário feito com sucesso!");
@@ -46,22 +42,25 @@ export default function PostScreen() {
             <Css.InputName
               type="name"
               name="name"
-              value={form.name}
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
               required
-              placeholder="   Nome"
+              placeholder="Nome"
             ></Css.InputName>
             <Css.InputEmail
               type="email"
               name="email"
-              value={form.name}
-              placeholder="  Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
               required
             ></Css.InputEmail>
             <Css.InputComentario
-              type="email"
-              name="email"
-              value={form.name}
-              placeholder="   Comentário"
+              type="text"
+              name="text"
+              value={comentario}
+              onChange={(e) => setComentario(e.target.value)}
+              placeholder="Comentário"
               required
             ></Css.InputComentario>
             <Css.BlueButton type="submit" onClick={verifyEmptyFields}>
