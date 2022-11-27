@@ -5,10 +5,18 @@ build_images:
   stage: build
   image: docker:20:10:16
 
-services: -docker:20.10.16-dind
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 12345
 
-variables:
-DOCKER_TLS_CERTDIR: "/certs"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 before_script: -docker login -u $REGISTRY_USER -p $REGISTRY_PASS
 
 script: -docker build -t annabraga/app-cicd-dio:1.0 app/.
