@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM postgres:14.3
 
 RUN apt-get update && apt-get install -y
 RUN apt-get -y install net-tools
@@ -6,11 +6,12 @@ RUN apt-get -y install iputils-ping
 RUN apt-get -y install apache2
 
 
-WORKDIR /TCC-DIO/oto/backend
-COPY data.js /tmp/backend/database/data.js
+WORKDIR destino/oto/backend
+
+COPY data.js /tmp/oto/backend/database/data.js
 COPY data.js / 
 COPY sql.sql /
 
 CMD bash
 
-EXPOSE 80 
+EXPOSE 5432
