@@ -1,24 +1,20 @@
-<h1>Repositório dos arquivos do projeto base para o projeto Tech Day do Bootcamp "Cloud DevOps Experience - Banco Carrefour"</h1>
+# Feedback API
+## Aplicação Fullstack de feedback dos clientes Carrefour
 
-<h2>Características da aplicação:</h2> 
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-•	Frontend (HTML/CSS/JS)<br>
-•	Backend (PHP e MySQL)
+Com o intuito de mostrar o zelo que o Banco Carrefour tem pelos seus clientes, contruí uma aplicação FullStack para o TechDay chamada FeedBackAPI. A ideia é que os clientes do banco Carrefour possam dar seus feedbacks livremente. Além de ser uma forma da empresa conversar diretamente com o seu público e pontuar a experiência do usuário, por meio dessa aplicação também podemos aprimorar a performance de trabalho. Essas foram as tecnologias utilizadas:
 
-<h3>O participante é livre para alterar as linguagens de programação e/ou realizar melhorias no projeto, desde que atenda às exigências de entrega.</h3>
+- NodeJS, Express;
+- React;
+- Postgres;
+- JavaScript;
+- Pipeline CI/CD de deploy;
+- Container, LoadBalancer, Imagem Docker personalizada no Docker Hub;
+- ✨MiniKube
 
-O participante deverá criar um pipeline de deploy desta aplicação em forma de Containers em um cluster Kubernetes. O participante poderá utilizar um cluster
-kubernetes em nuvem (Preferencialmente utilizando GCP).
+## API Carrefour
 
-<h2>Entrega do projeto</h2>
+- Import a HTML file and watch it magically convert to Markdown
 
-Com o problema apresentado, o participante poderá entrar o seu pipeline de CI/CD utilizando o Gitlab, Terraform ou outra solução desejada, como o exemplo abaixo:
-
-https://gitlab.com/denilsonbonatti/app-cicd-dio/-/blob/main/.gitlab-ci.yml
-
-O participante deverá apresentar um vídeo com o pit da sua solução com no máximo 5 minutos.
-
-Link do formulário de entrega:
-
-https://forms.office.com/r/S8MHD0HrUb
-
+## Layout da aplicação
