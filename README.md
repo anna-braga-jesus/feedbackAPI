@@ -15,7 +15,7 @@ Com o intuito de mostrar o zelo que o Banco Carrefour tem pelos seus clientes, c
 
 ## API Carrefour
 
-- Link da imagem pública personalizada que eu criei no Docker Hub: https://hub.docker.com/repository/docker/annajesus/postgres
+- Link da imagem pública personalizada que eu criei no Docker Hub:[ https://hub.docker.com/repository/docker/annajesus/postgres](https://hub.docker.com/r/annajesus/postgres)
 
 ## Dinâmica de telas
 
